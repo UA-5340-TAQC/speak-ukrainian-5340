@@ -1,10 +1,22 @@
 # speak-ukrainian-5340
 
-UI test automation project for the Speak Ukrainian website using Playwright and TypeScript.
+End-to-end UI test automation project for the Speak Ukrainian website, built with Playwright and TypeScript.
+
+**Version:** 1.0.0  
+**Last updated:** 2026-06-12
 
 ## 📊 Test Reports
 
 [![Allure Report](https://img.shields.io/badge/Allure-View%20Report-brightgreen?logo=allure)](https://UA-5340-TAQC.github.io/speak-ukrainian-5340/main/index.html)
+
+## Features
+
+- Cross-browser UI testing (Chromium, Firefox, WebKit)
+- Page Object Model structure for maintainable test code
+- Environment-driven runtime config via `.env` (`BASE_URL`, `HEADLESS`)
+- Test diagnostics on failures (`trace`, `screenshot`, `video`)
+- Allure result generation for richer reporting
+- CI execution on pushes and pull requests
 
 ## Tech stack
 
@@ -23,8 +35,10 @@ UI test automation project for the Speak Ukrainian website using Playwright and 
 1. Install dependencies:
 
 ```bash
-npm install
+npm ci
 ```
+
+Use `npm install` instead of `npm ci` only when you are intentionally updating `package-lock.json`.
 
 2. Install Playwright browsers:
 
@@ -47,16 +61,22 @@ HEADLESS=false
 
 ## Run tests
 
-Run all tests:
+Run all tests (all configured browsers):
 
 ```bash
 npm test
 ```
 
-Run tests in headed mode for a single browser:
+Run for one browser:
 
 ```bash
 npx playwright test --project=chromium
+```
+
+Run in headed mode:
+
+```bash
+npx playwright test --headed
 ```
 
 Run a specific spec file:
@@ -65,9 +85,15 @@ Run a specific spec file:
 npx playwright test tests/speak-ukrainian.example.spec.ts
 ```
 
+Run the standard local quality check pipeline:
+
+```bash
+npm run pc
+```
+
 ## Reports
 
-After execution, open the HTML report:
+After execution, open the Playwright report:
 
 ```bash
 npm run report
@@ -108,5 +134,5 @@ tests/           Test specs
 ## Notes
 
 - `playwright.config.ts` is configured for Chromium, Firefox, and WebKit projects.
-- The default reporter is Playwright HTML reporter.
+- Reporters are configured as `list` and `allure-playwright`.
 - `headless` is controlled by `HEADLESS` from environment config.
