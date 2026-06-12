@@ -33,8 +33,10 @@ export class OtherNewsComponent extends BaseComponent {
     const titles: string[] = [];
 
     for (let i = 0; i < count; i++) {
-      const card = new NewsCardComponent(this.page, this.cards.nth(i).toString());
-      const title = await card.getNewsTitle();
+      const item = this.cards.nth(i);
+      if (!(await item.isVisible())) continue;
+       const card = this.getCard(i);
+       const title = await card.getNewsTitle();
 
       titles.push(title ?? '');
     }
