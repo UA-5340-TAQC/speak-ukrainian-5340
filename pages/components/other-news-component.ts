@@ -1,6 +1,7 @@
-import { BaseComponent } from './base-component.js';
-import { Locator, Page } from '@playwright/test';
-import { NewsCardComponent } from './news-card-component.js';
+import type { Locator } from '@playwright/test';
+
+import { BaseComponent } from './base-component';
+import { NewsCardComponent } from './news-card-component';
 
 export class OtherNewsComponent extends BaseComponent {
   private readonly carousel: Locator;
@@ -10,14 +11,14 @@ export class OtherNewsComponent extends BaseComponent {
   private readonly pagination: Locator;
   private readonly newsCardComponent: NewsCardComponent;
 
-  constructor(page: Page, rootSelector: string) {
-    super(page, rootSelector);
+  constructor(rootLocator: Locator) {
+    super(rootLocator);
     this.carousel = this.root.locator('.other-news');
     this.cards = this.carousel.locator('.carousel-item');
     this.nextButton = this.carousel.locator('[aria-label="arrow-left"]');
     this.prevButton = this.carousel.locator('[aria-label="arrow-right"]');
     this.pagination = this.carousel.locator('ul.slick-dots');
-    this.newsCardComponent = new NewsCardComponent(page, rootSelector);
+    this.newsCardComponent = new NewsCardComponent(this.root);
   }
 
   async clickLeftArrow(): Promise<void> {
