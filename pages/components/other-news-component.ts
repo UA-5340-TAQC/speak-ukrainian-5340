@@ -35,8 +35,8 @@ export class OtherNewsComponent extends BaseComponent {
     for (let i = 0; i < count; i++) {
       const item = this.cards.nth(i);
       if (!(await item.isVisible())) continue;
-       const card = this.getCard(i);
-       const title = await card.getNewsTitle();
+      const card = this.getCard(i);
+      const title = await card.getNewsTitle();
 
       titles.push(title ?? '');
     }
