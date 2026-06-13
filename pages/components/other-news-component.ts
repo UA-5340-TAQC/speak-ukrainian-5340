@@ -32,4 +32,5 @@ export class OtherNewsComponent extends BaseComponent {
   async getPaginationCount(): Promise<number> {
     return this.pagination.locator('li').count();
   }
+  
 }
