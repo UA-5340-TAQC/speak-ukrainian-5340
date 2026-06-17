@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { test, expect } from '@/fixtures';
 
 test.describe('Help the Project button', () => {
   test('TC-07 Verify the functionality of the "Help the Project" button on a news article page', async ({

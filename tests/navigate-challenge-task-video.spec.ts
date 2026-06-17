@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from '@/fixtures';
 import { ChallengePage, ChallengeTaskPage } from '@/pages';
 
 test.use({ viewport: { width: 1920, height: 1080 } });
