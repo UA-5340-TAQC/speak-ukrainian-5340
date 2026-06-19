@@ -15,14 +15,14 @@ export class ClubPage extends BasePage {
   private readonly listCardLocator: Locator;
 
   protected clubBannerTitle: ClubBannerTitleComponent;
-  protected advancedSearch: AdvancedSearchComponent;
+  public advancedSearch: AdvancedSearchComponent;
   protected clubList: ListClubCardComponent;
   protected filterClubList: FilterClubListComponent;
 
   constructor(page: Page) {
     super(page);
     this.clubBannerTitleLocator = page.locator("//div[@class='city-name-box']");
-    this.advancedSearchLocator = page.locator("//div[@class='ant-layout-sider-children']");
+    this.advancedSearchLocator = page.locator('[title="Розширений пошук"]')
     this.listCardLocator = page.locator("//*[contains(@class,'club-list-content')]");
     this.clubBannerTitle = new ClubBannerTitleComponent(this.clubBannerTitleLocator);
     this.advancedSearch = new AdvancedSearchComponent(this.advancedSearchLocator);
@@ -30,6 +30,14 @@ export class ClubPage extends BasePage {
     this.filterClubListLocator = this.page.locator("//*[@class='club-list-control']");
     this.filterClubList = new FilterClubListComponent(this.filterClubListLocator);
   }
+  async clickAdvancedSearchButton(): Promise<void> {
+    await this.advancedSearch.click();
+  }
+
+  async isEnabledAdvancedSearchButton(): Promise<boolean> {
+    return await this.advancedSearch.isVisible();
+  }
+
   async navigate(): Promise<void> {
     await this.page.goto('/clubs');
   }

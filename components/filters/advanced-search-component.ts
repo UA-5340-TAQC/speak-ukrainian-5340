@@ -31,7 +31,7 @@ export class AdvancedSearchComponent extends BaseComponent {
     this.remoteButton = this.root.locator(
       ".//div[@id='basic_isOnline']//input[@class='ant-checkbox-input']"
     );
-    this.cityDropdown = this.root.locator(".//*[@id='basic_cityName']");
+    this.cityDropdown = this.root.locator('.ant-select-selection-item');
     this.districtDropdown = this.root.locator(".//*[@id='basic_districtName']");
     this.closestStationDropdown = this.root.locator(".//*[@id='basic_stationName']");
     this.dropDownLocator = this.root
@@ -83,10 +83,9 @@ export class AdvancedSearchComponent extends BaseComponent {
   async isAgeLabelVisible(): Promise<boolean> {
     return await this.ageLabel.isVisible();
   }
-  async selectCity(city: CitiesUser): Promise<AdvancedSearchComponent> {
-    await this.cityDropdown.click();
-    await this.dropdown.select(city);
-    return this;
+  async selectCity(city: CitiesUser): Promise<void> {
+  await this.cityDropdown.click();
+  await this.page.locator(`[title="${city}"]`).click();
   }
   async selectDistrict(district: string): Promise<AdvancedSearchComponent> {
     await this.districtDropdown.click();
