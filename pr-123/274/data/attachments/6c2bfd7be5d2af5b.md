@@ -1,0 +1,595 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: filter-check-test.spec.ts >> Check filtering functionality through the Home page >> [TC-6]: Verify homepage category selection redirects to the clubs filtered by the chosen category
+- Location: tests/filter-check-test.spec.ts:7:3
+
+# Error details
+
+```
+Error: expect(received).resolves.toBeTruthy()
+
+Received: false
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e5]:
+    - link [ref=e7] [cursor=pointer]:
+      - /url: /
+    - menu [ref=e10]:
+      - menuitem "apartment Гуртки" [ref=e11] [cursor=pointer]:
+        - img "apartment":
+          - img
+        - link "Гуртки" [ref=e13]:
+          - /url: /clubs
+      - menuitem "crown Челендж" [ref=e14] [cursor=pointer]:
+        - img "crown":
+          - img
+        - text: Челендж
+      - menuitem "folder-open Новини" [ref=e15] [cursor=pointer]:
+        - img "folder-open":
+          - img
+        - link "Новини" [ref=e17]:
+          - /url: /news
+      - menuitem "container Про нас" [ref=e18] [cursor=pointer]:
+        - img "container":
+          - img
+        - link "Про нас" [ref=e20]:
+          - /url: /about
+      - menuitem "folder-open Послуги українською" [ref=e21] [cursor=pointer]:
+        - img "folder-open":
+          - img
+        - link "Послуги українською" [ref=e23]:
+          - /url: /service
+      - menuitem [disabled]:
+        - img:
+          - img
+    - generic [ref=e24]:
+      - generic [ref=e25] [cursor=pointer]:
+        - img "environment":
+          - img
+        - text: Київ
+        - img "caret-down" [ref=e26]:
+          - img [ref=e27]
+      - generic [ref=e29] [cursor=pointer]:
+        - img "user" [ref=e31]:
+          - img [ref=e32]
+        - img "caret-down" [ref=e34]:
+          - img [ref=e35]
+  - main [ref=e38]:
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - heading "Гуртки в місті Київ" [level=2] [ref=e43]
+          - button "Показати на мапі" [ref=e44] [cursor=pointer]:
+            - generic [ref=e45]: Показати на мапі
+        - generic [ref=e47]:
+          - generic [ref=e49]:
+            - combobox [ref=e51]
+            - generic: Який гурток шукаєте?
+          - generic [ref=e52]:
+            - img "search" [ref=e53] [cursor=pointer]:
+              - img [ref=e54]
+            - img "control" [ref=e56] [cursor=pointer]:
+              - img [ref=e57]
+      - generic [ref=e59]:
+        - complementary [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: Розширений пошук
+            - generic [ref=e63]:
+              - text: Гурток/Центр
+              - generic [ref=e69]:
+                - generic [ref=e70] [cursor=pointer]:
+                  - radio "Гурток" [checked] [ref=e72]
+                  - generic [ref=e74]: Гурток
+                - generic [ref=e75] [cursor=pointer]:
+                  - radio "Центр" [ref=e77]
+                  - generic [ref=e79]: Центр
+              - text: Місто
+              - generic [ref=e85] [cursor=pointer]:
+                - generic [ref=e86]:
+                  - combobox [ref=e88]
+                  - generic "Київ" [ref=e89]
+                - generic:
+                  - img:
+                    - img
+                - img [ref=e91]:
+                  - img [ref=e92]
+              - text: Район міста
+              - generic [ref=e99] [cursor=pointer]:
+                - generic [ref=e100]:
+                  - combobox [ref=e102]
+                  - generic: Виберіть район
+                - generic:
+                  - img:
+                    - img
+              - text: Найближча станція метро
+              - generic [ref=e108] [cursor=pointer]:
+                - generic [ref=e109]:
+                  - combobox [ref=e111]
+                  - generic: Виберіть станцію
+                - generic:
+                  - img:
+                    - img
+              - text: Ремоут
+              - generic [ref=e118] [cursor=pointer]:
+                - checkbox "Доступний онлайн" [ref=e120]
+                - generic [ref=e122]: Доступний онлайн
+              - text: Категорії
+              - generic [ref=e128]:
+                - generic [ref=e129] [cursor=pointer]:
+                  - checkbox "Спортивні секції" [ref=e131]
+                  - generic [ref=e133]: Спортивні секції
+                - generic [ref=e134] [cursor=pointer]:
+                  - checkbox "Танці, хореографія" [ref=e136]
+                  - generic [ref=e138]: Танці, хореографія
+                - generic [ref=e139] [cursor=pointer]:
+                  - checkbox "Студії раннього розвитку" [ref=e141]
+                  - generic [ref=e143]: Студії раннього розвитку
+                - generic [ref=e144] [cursor=pointer]:
+                  - checkbox "Програмування, робототехніка, STEM" [ref=e146]
+                  - generic [ref=e148]: Програмування, робототехніка, STEM
+                - generic [ref=e149] [cursor=pointer]:
+                  - checkbox "Художня студія, мистецтво, дизайн" [ref=e151]
+                  - generic [ref=e153]: Художня студія, мистецтво, дизайн
+                - generic [ref=e154] [cursor=pointer]:
+                  - checkbox "Вокальна студія, музика, музичні інструменти" [ref=e156]
+                  - generic [ref=e158]: Вокальна студія, музика, музичні інструменти
+                - generic [ref=e159] [cursor=pointer]:
+                  - checkbox "Акторська майстерність, театр" [ref=e161]
+                  - generic [ref=e163]: Акторська майстерність, театр
+                - generic [ref=e164] [cursor=pointer]:
+                  - checkbox "Особистісний розвиток" [ref=e166]
+                  - generic [ref=e168]: Особистісний розвиток
+                - generic [ref=e169] [cursor=pointer]:
+                  - checkbox "Журналістика, дитяче телебачення, монтаж відео, влогів" [ref=e171]
+                  - generic [ref=e173]: Журналістика, дитяче телебачення, монтаж відео, влогів
+                - generic [ref=e174] [cursor=pointer]:
+                  - checkbox "Центр розвитку" [ref=e176]
+                  - generic [ref=e178]: Центр розвитку
+                - generic [ref=e179] [cursor=pointer]:
+                  - checkbox "Журналістика, дитяче телебачення, монтаж відео" [ref=e181]
+                  - generic [ref=e183]: Журналістика, дитяче телебачення, монтаж відео
+                - generic [ref=e184] [cursor=pointer]:
+                  - checkbox "Інше" [ref=e186]
+                  - generic [ref=e188]: Інше
+              - text: Вік дитини
+              - generic [ref=e194]:
+                - spinbutton [ref=e197]
+                - text: років
+        - main [ref=e198]:
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - generic [ref=e201]: "Сортувати:"
+              - generic [ref=e202] [cursor=pointer]: за алфавітом
+              - generic [ref=e203] [cursor=pointer]: за рейтингом
+              - generic [ref=e204] [cursor=pointer]:
+                - img "arrow-up" [ref=e205]:
+                  - img [ref=e206]
+                - img "arrow-down" [ref=e208]:
+                  - img [ref=e209]
+            - generic [ref=e211]:
+              - generic [ref=e212] [cursor=pointer]:
+                - generic [ref=e213]:
+                  - radio "Layer 1"
+                - img [ref=e216]:
+                  - generic "Layer 1" [ref=e217]
+              - generic [ref=e219] [cursor=pointer]:
+                - generic [ref=e220]:
+                  - radio "Layer 1" [checked]
+                - img [ref=e223]:
+                  - generic "Layer 1" [ref=e224]
+          - generic [ref=e226]:
+            - generic [ref=e229]:
+              - generic [ref=e230] [cursor=pointer]:
+                - generic [ref=e231]:
+                  - img
+                - generic [ref=e232]: American Gymnastics Club
+              - generic [ref=e236]: Спортивні секції
+              - paragraph [ref=e237]: Американський гімнастичний клуб (American Gymnastics Club) – перша та єдина в країні мережа унікальних спортивних клубів, яка базується на Розвивальній Гімнастиці. Крім щоденних занять, в Американському гімнастичному Клубі проходять «Показові виступи» та різноманітні тематичні вечірки, які допомагають зібрати активних однодумців і популяризувати та прививати любов до спорту, перетворюючи його в стиль життя.
+              - radiogroup [ref=e238]:
+                - listitem [ref=e239]:
+                  - radio "star star" [checked] [ref=e240]:
+                    - img "star" [ref=e242]:
+                      - img [ref=e243]
+                    - img "star" [ref=e246]:
+                      - img [ref=e247]
+                - listitem [ref=e249]:
+                  - radio "star star" [checked] [ref=e250]:
+                    - img "star" [ref=e252]:
+                      - img [ref=e253]
+                    - img "star" [ref=e256]:
+                      - img [ref=e257]
+                - listitem [ref=e259]:
+                  - radio "star star" [checked] [ref=e260]:
+                    - img "star" [ref=e262]:
+                      - img [ref=e263]
+                    - img "star" [ref=e266]:
+                      - img [ref=e267]
+                - listitem [ref=e269]:
+                  - radio "star star" [checked] [ref=e270]:
+                    - img "star" [ref=e272]:
+                      - img [ref=e273]
+                    - img "star" [ref=e276]:
+                      - img [ref=e277]
+                - listitem [ref=e279]:
+                  - radio "star star" [checked] [ref=e280]:
+                    - img "star" [ref=e282]:
+                      - img [ref=e283]
+                    - img "star" [ref=e286]:
+                      - img [ref=e287]
+              - generic [ref=e289]:
+                - img "environment" [ref=e290]:
+                  - img [ref=e291]
+                - generic [ref=e293] [cursor=pointer]: Київ, вулиця Фізкультури 1, корпус 3
+              - link "Детальніше" [ref=e294] [cursor=pointer]:
+                - /url: /club/26
+                - link "Детальніше" [ref=e295]:
+                  - /url: /club/26
+            - generic [ref=e298]:
+              - generic [ref=e299] [cursor=pointer]:
+                - generic [ref=e300]:
+                  - img
+                - generic [ref=e301]: Cinema Kids
+              - generic [ref=e305]: Журналістика, дитяче телебачення, монтаж відео
+              - paragraph [ref=e306]: "Денний освітньо-розважальний проектний табір для дітей 8-14 р. на території кіностустудії FILM.UA. Мета табору - познайомити дітей з процесом кіновиробництва. Учасники Кіноканікул отримують можливість зняти свій власний фільм, взявши участь у всіх етапах знімального процесу: від написання сценарію до фінального монтажу."
+              - radiogroup [ref=e307]:
+                - listitem [ref=e308]:
+                  - radio "star star" [ref=e309]:
+                    - img "star" [ref=e311]:
+                      - img [ref=e312]
+                    - img "star" [ref=e315]:
+                      - img [ref=e316]
+                - listitem [ref=e318]:
+                  - radio "star star" [ref=e319]:
+                    - img "star" [ref=e321]:
+                      - img [ref=e322]
+                    - img "star" [ref=e325]:
+                      - img [ref=e326]
+                - listitem [ref=e328]:
+                  - radio "star star" [ref=e329]:
+                    - img "star" [ref=e331]:
+                      - img [ref=e332]
+                    - img "star" [ref=e335]:
+                      - img [ref=e336]
+                - listitem [ref=e338]:
+                  - radio "star star" [ref=e339]:
+                    - img "star" [ref=e341]:
+                      - img [ref=e342]
+                    - img "star" [ref=e345]:
+                      - img [ref=e346]
+                - listitem [ref=e348]:
+                  - radio "star star" [ref=e349]:
+                    - img "star" [ref=e351]:
+                      - img [ref=e352]
+                    - img "star" [ref=e355]:
+                      - img [ref=e356]
+              - generic [ref=e358]:
+                - img "environment" [ref=e359]:
+                  - img [ref=e360]
+                - generic [ref=e362] [cursor=pointer]: Київ, вул.Закревського 22
+              - link "Детальніше" [ref=e363] [cursor=pointer]:
+                - /url: /club/94
+                - link "Детальніше" [ref=e364]:
+                  - /url: /club/94
+            - generic [ref=e367]:
+              - generic [ref=e368] [cursor=pointer]:
+                - generic [ref=e369]:
+                  - img
+                - generic [ref=e370]: gJEzmKAU
+              - generic [ref=e374]: Спортивні секції
+              - generic [ref=e375]:
+                - generic [ref=e376]:
+                  - img "Center logo" [ref=e377]
+                  - generic [ref=e378]:
+                    - generic [ref=e379]: Центр розвитку
+                    - generic [ref=e380]: Курси програмування IT-stat
+                - generic [ref=e381]: 0KZIASNbGD02eh6t6ViLMRfyLmRVYddAag7vgIbf
+              - generic [ref=e382]:
+                - img "desktop" [ref=e383]:
+                  - img [ref=e384]
+                - generic [ref=e386]: Гурток онлайн
+              - radiogroup [ref=e387]:
+                - listitem [ref=e388]:
+                  - radio "star star" [ref=e389]:
+                    - img "star" [ref=e391]:
+                      - img [ref=e392]
+                    - img "star" [ref=e395]:
+                      - img [ref=e396]
+                - listitem [ref=e398]:
+                  - radio "star star" [ref=e399]:
+                    - img "star" [ref=e401]:
+                      - img [ref=e402]
+                    - img "star" [ref=e405]:
+                      - img [ref=e406]
+                - listitem [ref=e408]:
+                  - radio "star star" [ref=e409]:
+                    - img "star" [ref=e411]:
+                      - img [ref=e412]
+                    - img "star" [ref=e415]:
+                      - img [ref=e416]
+                - listitem [ref=e418]:
+                  - radio "star star" [ref=e419]:
+                    - img "star" [ref=e421]:
+                      - img [ref=e422]
+                    - img "star" [ref=e425]:
+                      - img [ref=e426]
+                - listitem [ref=e428]:
+                  - radio "star star" [ref=e429]:
+                    - img "star" [ref=e431]:
+                      - img [ref=e432]
+                    - img "star" [ref=e435]:
+                      - img [ref=e436]
+              - generic [ref=e438]:
+                - img "environment" [ref=e439]:
+                  - img [ref=e440]
+                - generic [ref=e442] [cursor=pointer]: вул. Садова, 1а
+              - link "Детальніше" [ref=e443] [cursor=pointer]:
+                - /url: /club/396
+                - link "Детальніше" [ref=e444]:
+                  - /url: /club/396
+            - generic [ref=e447]:
+              - generic [ref=e448] [cursor=pointer]:
+                - generic [ref=e449]:
+                  - img
+                - generic [ref=e450]: "IT освіта: курси \"ГРАНД\""
+              - generic [ref=e454]: Програмування, робототехніка, STEM
+              - paragraph [ref=e455]: Ми вивчаємо все, що можна уявити в ІТ і навіть більше. Загалом ми вчимо 20 тем. Всі ці теми ми вивчаємо в одному курсі, бо всі сучасні грамотні люди мають це знати. Ми набираємо учнів 5-10 класів. Окремі диференційовані групи для молодших і старших учнів. Повірте, такі речі треба знати всім, незалежно від професії. Ви будете вигідно відрізнятися від інших – це ключ до успіху. Прийдіть і переконайтеся – Ви будете приємно здивовані. Ви зможете робити проекти і творити свої історії успіху.
+              - generic [ref=e456]:
+                - img "desktop" [ref=e457]:
+                  - img [ref=e458]
+                - generic [ref=e460]: Гурток онлайн
+              - radiogroup [ref=e461]:
+                - listitem [ref=e462]:
+                  - radio "star star" [checked] [ref=e463]:
+                    - img "star" [ref=e465]:
+                      - img [ref=e466]
+                    - img "star" [ref=e469]:
+                      - img [ref=e470]
+                - listitem [ref=e472]:
+                  - radio "star star" [checked] [ref=e473]:
+                    - img "star" [ref=e475]:
+                      - img [ref=e476]
+                    - img "star" [ref=e479]:
+                      - img [ref=e480]
+                - listitem [ref=e482]:
+                  - radio "star star" [checked] [ref=e483]:
+                    - img "star" [ref=e485]:
+                      - img [ref=e486]
+                    - img "star" [ref=e489]:
+                      - img [ref=e490]
+                - listitem [ref=e492]:
+                  - radio "star star" [checked] [ref=e493]:
+                    - img "star" [ref=e495]:
+                      - img [ref=e496]
+                    - img "star" [ref=e499]:
+                      - img [ref=e500]
+                - listitem [ref=e502]:
+                  - radio "star star" [checked] [ref=e503]:
+                    - img "star" [ref=e505]:
+                      - img [ref=e506]
+                    - img "star" [ref=e509]:
+                      - img [ref=e510]
+              - img "environment" [ref=e513]:
+                - img [ref=e514]
+              - link "Детальніше" [ref=e516] [cursor=pointer]:
+                - /url: /club/27
+                - link "Детальніше" [ref=e517]:
+                  - /url: /club/27
+            - generic [ref=e520]:
+              - generic [ref=e521] [cursor=pointer]:
+                - generic [ref=e522]:
+                  - img
+                - generic [ref=e523]: LESKIV-SCHOOL
+              - generic [ref=e527]: Спортивні секції
+              - paragraph [ref=e528]: Спорт - гірські та водні лижі, водні лижі та вейкборд, ролики, петанк
+              - radiogroup [ref=e529]:
+                - listitem [ref=e530]:
+                  - radio "star star" [checked] [ref=e531]:
+                    - img "star" [ref=e533]:
+                      - img [ref=e534]
+                    - img "star" [ref=e537]:
+                      - img [ref=e538]
+                - listitem [ref=e540]:
+                  - radio "star star" [checked] [ref=e541]:
+                    - img "star" [ref=e543]:
+                      - img [ref=e544]
+                    - img "star" [ref=e547]:
+                      - img [ref=e548]
+                - listitem [ref=e550]:
+                  - radio "star star" [checked] [ref=e551]:
+                    - img "star" [ref=e553]:
+                      - img [ref=e554]
+                    - img "star" [ref=e557]:
+                      - img [ref=e558]
+                - listitem [ref=e560]:
+                  - radio "star star" [checked] [ref=e561]:
+                    - img "star" [ref=e563]:
+                      - img [ref=e564]
+                    - img "star" [ref=e567]:
+                      - img [ref=e568]
+                - listitem [ref=e570]:
+                  - radio "star star" [checked] [ref=e571]:
+                    - img "star" [ref=e573]:
+                      - img [ref=e574]
+                    - img "star" [ref=e577]:
+                      - img [ref=e578]
+              - generic [ref=e580]:
+                - img "environment" [ref=e581]:
+                  - img [ref=e582]
+                - generic [ref=e584] [cursor=pointer]: Київ, вул. Генерала Родимцева, 6
+              - link "Детальніше" [ref=e585] [cursor=pointer]:
+                - /url: /club/35
+                - link "Детальніше" [ref=e586]:
+                  - /url: /club/35
+            - generic [ref=e589]:
+              - generic [ref=e590] [cursor=pointer]:
+                - generic [ref=e591]:
+                  - img
+                - generic [ref=e592]: Music Land - музична школа для дітей і дорослих
+              - generic [ref=e594]:
+                - generic [ref=e596]: Вокальна студія, музика, музичні інструменти
+                - generic [ref=e598]: Акторська майстерність, театр
+              - paragraph [ref=e599]: "Наша школа одна з небагатьох, в якій впроваджено повний цикл навчання, де можна не тільки навчитися грати й співати улюблені пісні, а й складати свої власні та грати їх в групі, виступаючи на концертах! Це й сольні виступи, концерти, участь у конкурсах та фестивалях, домашній звукозапис та аранжування своїх творів, онлайн заняття з улюбленими вчителями. Ми пропонуємо широкий вибір музичних інструментів та стилів: гітара (акустична, електро, бас, укулеле); клавіші (фортепіано, електропіаніно, синтезатор); вокал (академічний, естрадний, рок, екстрім, джаз); духові (саксофон, альт, труба); барабани (джембе, перкусія, ударна установка); струнні (скрипка, віолончель, альт). Якщо Ви не маєте власного інструменту, його для заняття у приміщенні школи надасть «Music Land». Наші викладачі – професіональні музиканти, які мають багатий досвід виступів на сцені, роботи в студіях, працюють за кращими методиками викладання. Вони мають фундаментальну фахову освіту ідобре знаються на сучасних напрямках в музиці: Pop, Rock, Soul, Funk, R & B, Jazz, електронна та альтернативна музика тощо. Всі працюють також в Online режимі та мають великий досвід проведення таких занять."
+              - generic [ref=e600]:
+                - img "desktop" [ref=e601]:
+                  - img [ref=e602]
+                - generic [ref=e604]: Гурток онлайн
+              - radiogroup [ref=e605]:
+                - listitem [ref=e606]:
+                  - radio "star star" [ref=e607]:
+                    - img "star" [ref=e609]:
+                      - img [ref=e610]
+                    - img "star" [ref=e613]:
+                      - img [ref=e614]
+                - listitem [ref=e616]:
+                  - radio "star star" [ref=e617]:
+                    - img "star" [ref=e619]:
+                      - img [ref=e620]
+                    - img "star" [ref=e623]:
+                      - img [ref=e624]
+                - listitem [ref=e626]:
+                  - radio "star star" [ref=e627]:
+                    - img "star" [ref=e629]:
+                      - img [ref=e630]
+                    - img "star" [ref=e633]:
+                      - img [ref=e634]
+                - listitem [ref=e636]:
+                  - radio "star star" [ref=e637]:
+                    - img "star" [ref=e639]:
+                      - img [ref=e640]
+                    - img "star" [ref=e643]:
+                      - img [ref=e644]
+                - listitem [ref=e646]:
+                  - radio "star star" [ref=e647]:
+                    - img "star" [ref=e649]:
+                      - img [ref=e650]
+                    - img "star" [ref=e653]:
+                      - img [ref=e654]
+              - generic [ref=e656]:
+                - img "environment" [ref=e657]:
+                  - img [ref=e658]
+                - generic [ref=e660] [cursor=pointer]: м. Київ, вул. М. Стельмаха, 10-А
+              - link "Детальніше" [ref=e661] [cursor=pointer]:
+                - /url: /club/91
+                - link "Детальніше" [ref=e662]:
+                  - /url: /club/91
+          - list [ref=e663]:
+            - listitem "Previous Page" [ref=e664]:
+              - button "left" [disabled] [ref=e665]:
+                - img "left" [ref=e666]:
+                  - img [ref=e667]
+            - listitem "1" [ref=e669] [cursor=pointer]:
+              - generic [ref=e670]: "1"
+            - listitem "2" [ref=e671] [cursor=pointer]:
+              - generic [ref=e672]: "2"
+            - listitem "3" [ref=e673] [cursor=pointer]:
+              - generic [ref=e674]: "3"
+            - listitem "4" [ref=e675] [cursor=pointer]:
+              - generic [ref=e676]: "4"
+            - listitem "5" [ref=e677] [cursor=pointer]:
+              - generic [ref=e678]: "5"
+            - listitem "Next 5 Pages" [ref=e679] [cursor=pointer]:
+              - generic [ref=e681]:
+                - img "double-right" [ref=e682]:
+                  - img [ref=e683]
+                - generic [ref=e685]: •••
+            - listitem "12" [ref=e686] [cursor=pointer]:
+              - generic [ref=e687]: "12"
+            - listitem "Next Page" [ref=e688] [cursor=pointer]:
+              - button "right" [ref=e689]:
+                - img "right" [ref=e690]:
+                  - img [ref=e691]
+  - contentinfo [ref=e693]:
+    - generic [ref=e694]:
+      - link [ref=e695] [cursor=pointer]:
+        - /url: ""
+      - generic [ref=e698]:
+        - generic [ref=e699]: Нам небайдуже майбутнє
+        - generic [ref=e700]: дітей та української мови
+      - generic [ref=e702]:
+        - link "facebook" [ref=e703] [cursor=pointer]:
+          - /url: https://www.facebook.com/teach.in.ukrainian
+          - img "facebook":
+            - img
+        - link "youtube" [ref=e704] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UCP38C0jxC8aNbW34eBoQKJw
+          - img "youtube":
+            - img
+        - link "instagram" [ref=e705] [cursor=pointer]:
+          - /url: https://www.instagram.com/yedyni.ruh/
+          - img "instagram":
+            - img
+        - link:
+          - /url: ""
+      - generic [ref=e706]: ©2021-2022 Design by Qubstudio & Development by SoftServe
+    - generic [ref=e707]:
+      - generic [ref=e708]: Наші партнери
+      - generic [ref=e709]:
+        - link "soft_serve" [ref=e710] [cursor=pointer]:
+          - /url: https://www.softserveinc.com/uk-ua
+          - img "soft_serve" [ref=e711]
+        - link "Mova_obyednue" [ref=e712] [cursor=pointer]:
+          - /url: https://www.facebook.com/zakonpromovu5670
+          - img "Mova_obyednue" [ref=e713]
+        - link "EDERA" [ref=e714] [cursor=pointer]:
+          - /url: https://www.ed-era.com
+          - img "EDERA" [ref=e715]
+        - link "e-mova" [ref=e716] [cursor=pointer]:
+          - /url: https://emova.language-ua.online
+          - img "e-mova" [ref=e717]
+        - link "Kraina_FM" [ref=e718] [cursor=pointer]:
+          - /url: https://krainafm.com.ua
+          - img "Kraina_FM" [ref=e719]
+        - link "ucf" [ref=e720] [cursor=pointer]:
+          - /url: https://ucf.in.ua
+          - img "ucf" [ref=e721]
+        - link "prostir_svobodi" [ref=e722] [cursor=pointer]:
+          - /url: https://prostirsvobody.org
+          - img "prostir_svobodi" [ref=e723]
+    - generic [ref=e724]:
+      - generic [ref=e725]: Як допомогти проєкту?
+      - generic [ref=e726]: Ініціатива потребує постійної фінансової підтримки, аби покривати щоденні витрати на роботу.
+      - link "Допомогти проєкту" [ref=e727] [cursor=pointer]:
+        - /url: https://secure.wayforpay.com/payment/s0f2891d77061
+        - button "Допомогти проєкту" [ref=e728]:
+          - generic [ref=e729]: Допомогти проєкту
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | import { ClubPage } from '@/pages/club-page';
+  3  | import { HomePage } from '@/pages/home-page';
+  4  | import { ClubCategory } from '@/data/club-category';
+  5  | 
+  6  | test.describe('Check filtering functionality through the Home page', () => {
+  7  |   test('[TC-6]: Verify homepage category selection redirects to the clubs filtered by the chosen category', async ({
+  8  |     page,
+  9  |   }) => {
+  10 |     const homePage = new HomePage(page);
+  11 |     const CATEGORY_NAME = 'Спортивні секції';
+  12 | 
+  13 |     await homePage.navigateTo('/');
+  14 |     await homePage.waitForPageLoad();
+  15 |     await homePage.clickCategory(CATEGORY_NAME);
+  16 | 
+  17 |     const clubPage = new ClubPage(page);
+  18 |     await clubPage.waitForPageLoad();
+> 19 |     await expect(clubPage.isCaregoryButtonChecked(ClubCategory.SPORTS)).resolves.toBeTruthy();
+     |                                                                                  ^ Error: expect(received).resolves.toBeTruthy()
+  20 |     await expect(clubPage.isCategoryLabelVisible()).resolves.toBeTruthy();
+  21 |     await expect(clubPage.getFirstCategory()).resolves.toContain(CATEGORY_NAME);
+  22 |   });
+  23 | });
+  24 | 
+```
