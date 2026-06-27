@@ -1,0 +1,263 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: ui/club-tests/tc-004-add-new-club.spec.ts >> tc-004-add-new-club >> should add a new club with required data
+- Location: tests/ui/club-tests/tc-004-add-new-club.spec.ts:28:3
+
+# Error details
+
+```
+TypeError: homePage.header.clickAddClubButton is not a function
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e5]:
+    - link [ref=e7] [cursor=pointer]:
+      - /url: /
+    - menu [ref=e10]:
+      - menuitem "apartment Гуртки" [ref=e11] [cursor=pointer]:
+        - img "apartment":
+          - img
+        - link "Гуртки" [ref=e13]:
+          - /url: /clubs
+      - menuitem "crown Челендж" [ref=e14] [cursor=pointer]:
+        - img "crown":
+          - img
+        - text: Челендж
+      - menuitem "folder-open Новини" [ref=e15] [cursor=pointer]:
+        - img "folder-open":
+          - img
+        - link "Новини" [ref=e17]:
+          - /url: /news
+      - menuitem "container Про нас" [ref=e18] [cursor=pointer]:
+        - img "container":
+          - img
+        - link "Про нас" [ref=e20]:
+          - /url: /about
+      - menuitem "folder-open Послуги українською" [ref=e21] [cursor=pointer]:
+        - img "folder-open":
+          - img
+        - link "Послуги українською" [ref=e23]:
+          - /url: /service
+      - menuitem [disabled]:
+        - img:
+          - img
+    - generic [ref=e24]:
+      - generic [ref=e25] [cursor=pointer]:
+        - img "environment":
+          - img
+        - text: Київ
+        - img "caret-down" [ref=e26]:
+          - img [ref=e27]
+      - button "Додати гурток" [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]: Додати гурток
+      - generic [ref=e31] [cursor=pointer]:
+        - img "user" [ref=e33]:
+          - img [ref=e34]
+        - img "caret-down" [ref=e36]:
+          - img [ref=e37]
+  - main [ref=e40]:
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - heading "Ініціатива “Навчай українською”" [level=2] [ref=e44]
+        - generic [ref=e45]:
+          - generic [ref=e47]:
+            - combobox [ref=e49]
+            - generic: Який гурток шукаєте?
+          - generic [ref=e50]:
+            - img "search" [ref=e51] [cursor=pointer]:
+              - img [ref=e52]
+            - img "control" [ref=e54] [cursor=pointer]:
+              - img [ref=e55]
+      - generic [ref=e57]:
+        - img "arrow-left" [ref=e58] [cursor=pointer]:
+          - img [ref=e59]
+        - img "arrow-right" [ref=e63] [cursor=pointer]:
+          - img [ref=e64]
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - heading "Оберіть напрям гуртків" [level=2] [ref=e68]
+          - link "Всі гуртки" [ref=e69] [cursor=pointer]:
+            - /url: /clubs
+            - button "Всі гуртки" [ref=e70]:
+              - generic [ref=e71]: Всі гуртки
+        - generic:
+          - img "arrow-left" [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+          - img "arrow-right" [ref=e75] [cursor=pointer]:
+            - img [ref=e76]
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - heading "Челендж \"Навчай українською\"" [level=2] [ref=e81]
+            - generic [ref=e82]: Ми допоможемо вам перейти на українську мову викладання. Тут ви можете знайти мотиваційні та практичні вебінари з експертами, корисні матеріали, які вдосконалять ваші знання та навички викладати українською.
+            - link "Дізнатись більше" [ref=e83] [cursor=pointer]:
+              - /url: /challenge
+              - button "Дізнатись більше" [ref=e84]:
+                - generic [ref=e85]: Дізнатись більше
+          - generic:
+            - img
+        - link "Клуб української мови \"Розмовляй\"" [ref=e88] [cursor=pointer]:
+          - /url: /speakingclub
+          - heading "Клуб української мови \"Розмовляй\"" [level=2] [ref=e89]
+      - generic [ref=e90]:
+        - link:
+          - /url: ""
+        - link:
+          - /url: https://www.facebook.com/events/2754499954695563
+          - img
+  - contentinfo [ref=e91]:
+    - generic [ref=e92]:
+      - link [ref=e93] [cursor=pointer]:
+        - /url: ""
+      - generic [ref=e96]:
+        - generic [ref=e97]: Нам небайдуже майбутнє
+        - generic [ref=e98]: дітей та української мови
+      - generic [ref=e100]:
+        - link "facebook" [ref=e101] [cursor=pointer]:
+          - /url: https://www.facebook.com/teach.in.ukrainian
+          - img "facebook":
+            - img
+        - link "youtube" [ref=e102] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UCP38C0jxC8aNbW34eBoQKJw
+          - img "youtube":
+            - img
+        - link "instagram" [ref=e103] [cursor=pointer]:
+          - /url: https://www.instagram.com/yedyni.ruh/
+          - img "instagram":
+            - img
+        - link:
+          - /url: ""
+      - generic [ref=e104]: ©2021-2022 Design by Qubstudio & Development by SoftServe
+    - generic [ref=e105]:
+      - generic [ref=e106]: Наші партнери
+      - generic [ref=e107]:
+        - link "soft_serve" [ref=e108] [cursor=pointer]:
+          - /url: https://www.softserveinc.com/uk-ua
+          - img "soft_serve" [ref=e109]
+        - link "Mova_obyednue" [ref=e110] [cursor=pointer]:
+          - /url: https://www.facebook.com/zakonpromovu5670
+          - img "Mova_obyednue" [ref=e111]
+        - link "EDERA" [ref=e112] [cursor=pointer]:
+          - /url: https://www.ed-era.com
+          - img "EDERA" [ref=e113]
+        - link "e-mova" [ref=e114] [cursor=pointer]:
+          - /url: https://emova.language-ua.online
+          - img "e-mova" [ref=e115]
+        - link "Kraina_FM" [ref=e116] [cursor=pointer]:
+          - /url: https://krainafm.com.ua
+          - img "Kraina_FM" [ref=e117]
+        - link "ucf" [ref=e118] [cursor=pointer]:
+          - /url: https://ucf.in.ua
+          - img "ucf" [ref=e119]
+        - link "prostir_svobodi" [ref=e120] [cursor=pointer]:
+          - /url: https://prostirsvobody.org
+          - img "prostir_svobodi" [ref=e121]
+    - generic [ref=e122]:
+      - generic [ref=e123]: Як допомогти проєкту?
+      - generic [ref=e124]: Ініціатива потребує постійної фінансової підтримки, аби покривати щоденні витрати на роботу.
+      - link "Допомогти проєкту" [ref=e125] [cursor=pointer]:
+        - /url: https://secure.wayforpay.com/payment/s0f2891d77061
+        - button "Допомогти проєкту" [ref=e126]:
+          - generic [ref=e127]: Допомогти проєкту
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@/fixtures/modal-fixture';
+  2  | import * as allure from 'allure-js-commons';
+  3  | import { DataBuilder } from '@/data';
+  4  | 
+  5  | allure.epic('Speak Ukrainian');
+  6  | allure.owner('Nikita Muntianov');
+  7  | allure.feature('Add Club');
+  8  | 
+  9  | test.describe('tc-004-add-new-club', (): void => {
+  10 |   test.beforeEach(async ({ homePage, signInModal, addClubModal }): Promise<void> => {
+  11 |     await addClubModal.form.setupPayloadSanitizer();
+  12 | 
+  13 |     await homePage.goto();
+  14 | 
+> 15 |     await homePage.header.clickAddClubButton();
+     |                           ^ TypeError: homePage.header.clickAddClubButton is not a function
+  16 |     await signInModal.waitForVisible();
+  17 |     await signInModal.login(process.env.TEST_EMAIL as string, process.env.TEST_PASSWORD as string);
+  18 |     await signInModal.waitForHidden();
+  19 | 
+  20 |     await homePage.goto();
+  21 |     await homePage.header.clickAddClubButton();
+  22 |     await addClubModal.waitForVisible();
+  23 |   });
+  24 | 
+  25 |   allure.severity('critical');
+  26 |   allure.description('Add a New Club with required data');
+  27 | 
+  28 |   test('should add a new club with required data', async ({
+  29 |     page,
+  30 |     homePage,
+  31 |     profilePage,
+  32 |     addClubModal,
+  33 |     addLocationModal,
+  34 |   }): Promise<void> => {
+  35 |     test.setTimeout(90000);
+  36 | 
+  37 |     const clubData = DataBuilder.getAddClubData();
+  38 | 
+  39 |     await addClubModal.form.fillClubName(clubData.clubName);
+  40 |     await addClubModal.form.checkCategory(clubData.category);
+  41 |     await addClubModal.form.fillAgeBounds(clubData.ageFrom, clubData.ageTo);
+  42 |     await addClubModal.form.selectCenter(clubData.center);
+  43 | 
+  44 |     await addClubModal.form.clickNextStep(clubData.stepContactsTitle);
+  45 | 
+  46 |     await addClubModal.form.clickAddLocationButton();
+  47 |     await addLocationModal.waitForVisible();
+  48 | 
+  49 |     await addLocationModal.form.fillLocationName(clubData.locationName);
+  50 |     await addLocationModal.form.selectCity(clubData.city);
+  51 |     await addLocationModal.form.fillAddress(clubData.address);
+  52 |     await addLocationModal.form.fillCoordinates(clubData.coordinates);
+  53 |     await addLocationModal.form.fillPhone(clubData.phone);
+  54 | 
+  55 |     await addLocationModal.form.clickAddButton();
+  56 |     await addLocationModal.waitForHidden();
+  57 | 
+  58 |     await addClubModal.form.checkWorkday(clubData.workDay);
+  59 |     await addClubModal.form.selectWorkingHours(
+  60 |       clubData.startHour,
+  61 |       clubData.startMinute,
+  62 |       clubData.endHour,
+  63 |       clubData.endMinute
+  64 |     );
+  65 |     await addClubModal.form.fillContactPhone(clubData.phone);
+  66 | 
+  67 |     await addClubModal.form.clickNextStep(clubData.stepDescriptionTitle);
+  68 | 
+  69 |     await addClubModal.form.uploadLogo(clubData.logoPath);
+  70 |     await addClubModal.form.fillDescription(clubData.description);
+  71 | 
+  72 |     await homePage.message.expectNoValidationErrors();
+  73 |     await addClubModal.form.clickFinish();
+  74 | 
+  75 |     await homePage.message.expectSuccessMessageVisible(clubData.successMessage);
+  76 |     await expect(page).toHaveURL(clubData.profileUrlRegex);
+  77 | 
+  78 |     await profilePage.userItems.waitForVisible();
+  79 |     await profilePage.userItems.deleteClubByTitle(
+  80 |       clubData.clubName,
+  81 |       clubData.deleteOptionText,
+  82 |       clubData.deleteSuccessMessage
+  83 |     );
+  84 |   });
+  85 | });
+  86 | 
+```
