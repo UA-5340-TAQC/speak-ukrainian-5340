@@ -1,0 +1,10 @@
+{
+  "id": 0,
+  "sortby": 1,
+  "name": "Auto Test Category 656918",
+  "description": "Category created by Playwright API test",
+  "urlLogo": "https://example.com/logo.png",
+  "backgroundColor": "#FFFFFF",
+  "tagBackgroundColor": "#000000",
+  "tagTextColor": "#FF0000"
+}
