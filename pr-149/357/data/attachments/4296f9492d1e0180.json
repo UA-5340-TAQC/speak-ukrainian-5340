@@ -1,0 +1,9 @@
+{
+  "name": "Updated Task 1782646374770",
+  "headerText": "This is a sufficiently long header text to pass validation.",
+  "description": "This is a sufficiently long description text to pass validation.",
+  "picture": "/upload/test-picture.png",
+  "startDate": "2026-06-28",
+  "isActive": true,
+  "challengeId": 1
+}

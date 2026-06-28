@@ -1,0 +1,6 @@
+
+--- SETUP SKIPPED ---
+Failed to log in with TEST_EMAIL (xelaho8788@aspensif.com).
+API Response: 403 - {"status":403,"message":"Ви не підтвердили електронну пошту: xelaho8788@aspensif.com"}
+---------------------
+

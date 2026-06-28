@@ -1,0 +1,429 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: ui/news-navigation.spec.ts >> news-navigation >> tc-58: Verify that changing the global city redirects to clubs, and returning to news displays the updated sidebar
+- Location: tests/ui/news-navigation.spec.ts:66:3
+
+# Error details
+
+```
+Test timeout of 60000ms exceeded while running "beforeEach" hook.
+```
+
+```
+Error: page.goto: Test timeout of 60000ms exceeded.
+Call log:
+  - navigating to "https://speak-ukrainian.org.ua/news", waiting until "load"
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e5]:
+    - link [ref=e7] [cursor=pointer]:
+      - /url: /
+    - menu [ref=e10]:
+      - menuitem "apartment Гуртки" [ref=e11] [cursor=pointer]:
+        - img "apartment":
+          - img
+        - link "Гуртки" [ref=e13]:
+          - /url: /clubs
+      - menuitem "crown Челендж" [ref=e14] [cursor=pointer]:
+        - img "crown":
+          - img
+        - text: Челендж
+      - menuitem "folder-open Новини" [ref=e15] [cursor=pointer]:
+        - img "folder-open":
+          - img
+        - link "Новини" [ref=e17]:
+          - /url: /news
+      - menuitem "container Про нас" [ref=e18] [cursor=pointer]:
+        - img "container":
+          - img
+        - link "Про нас" [ref=e20]:
+          - /url: /about
+      - menuitem "folder-open Послуги українською" [ref=e21] [cursor=pointer]:
+        - img "folder-open":
+          - img
+        - link "Послуги українською" [ref=e23]:
+          - /url: /service
+      - menuitem [disabled]:
+        - img:
+          - img
+    - generic [ref=e24]:
+      - generic [ref=e25] [cursor=pointer]:
+        - img "environment":
+          - img
+        - text: Київ
+        - img "caret-down" [ref=e26]:
+          - img [ref=e27]
+      - generic [ref=e29] [cursor=pointer]:
+        - img "user" [ref=e31]:
+          - img [ref=e32]
+        - img "caret-down" [ref=e34]:
+          - img [ref=e35]
+  - main [ref=e38]:
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - heading "Новини" [level=2] [ref=e43]
+        - generic [ref=e44]:
+          - generic [ref=e46]:
+            - combobox [ref=e48]
+            - generic: Який гурток шукаєте?
+          - generic [ref=e49]:
+            - img "search" [ref=e50] [cursor=pointer]:
+              - img [ref=e51]
+            - img "control" [ref=e53] [cursor=pointer]:
+              - img [ref=e54]
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: Invalid Date
+            - generic [ref=e62]: "Новий курс \"Єдині\": почніть літо із переходу на українську"
+            - link "Детальніше arrow-right" [ref=e63] [cursor=pointer]:
+              - /url: /news/27
+              - text: Детальніше
+              - img "arrow-right" [ref=e64]:
+                - img [ref=e65]
+          - generic [ref=e69]:
+            - generic [ref=e70]: Invalid Date
+            - generic [ref=e71]: Розпочався 13-й курс проєкту «Єдині»!
+            - link "Детальніше arrow-right" [ref=e72] [cursor=pointer]:
+              - /url: /news/26
+              - text: Детальніше
+              - img "arrow-right" [ref=e73]:
+                - img [ref=e74]
+          - generic [ref=e78]:
+            - generic [ref=e79]: Invalid Date
+            - generic [ref=e80]: Стартує 12-ий курс "Єдиних"!
+            - link "Детальніше arrow-right" [ref=e81] [cursor=pointer]:
+              - /url: /news/25
+              - text: Детальніше
+              - img "arrow-right" [ref=e82]:
+                - img [ref=e83]
+          - generic [ref=e87]:
+            - generic [ref=e88]: Invalid Date
+            - generic [ref=e89]: Розпочали реєстрацію на десятий курс проєкту "Єдині"
+            - link "Детальніше arrow-right" [ref=e90] [cursor=pointer]:
+              - /url: /news/24
+              - text: Детальніше
+              - img "arrow-right" [ref=e91]:
+                - img [ref=e92]
+          - list [ref=e94]:
+            - listitem "Previous Page" [ref=e95]:
+              - button "left" [disabled] [ref=e96]:
+                - img "left" [ref=e97]:
+                  - img [ref=e98]
+            - listitem "1" [ref=e100] [cursor=pointer]:
+              - generic [ref=e101]: "1"
+            - listitem "2" [ref=e102] [cursor=pointer]:
+              - generic [ref=e103]: "2"
+            - listitem "3" [ref=e104] [cursor=pointer]:
+              - generic [ref=e105]: "3"
+            - listitem "4" [ref=e106] [cursor=pointer]:
+              - generic [ref=e107]: "4"
+            - listitem "5" [ref=e108] [cursor=pointer]:
+              - generic [ref=e109]: "5"
+            - listitem "Next Page" [ref=e110] [cursor=pointer]:
+              - button "right" [ref=e111]:
+                - img "right" [ref=e112]:
+                  - img [ref=e113]
+        - generic [ref=e115]:
+          - heading "Гуртки у місті Київ" [level=2] [ref=e117]
+          - generic [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]:
+              - generic [ref=e122]:
+                - img
+              - generic [ref=e123]: American Gymnastics Club
+            - generic [ref=e127]: Спортивні секції
+            - paragraph [ref=e128]: Американський гімнастичний клуб (American Gymnastics Club) – перша та єдина в країні мережа унікальних спортивних клубів, яка базується на Розвивальній Гімнастиці. Крім щоденних занять, в Американському гімнастичному Клубі проходять «Показові виступи» та різноманітні тематичні вечірки, які допомагають зібрати активних однодумців і популяризувати та прививати любов до спорту, перетворюючи його в стиль життя.
+            - radiogroup [ref=e129]:
+              - listitem [ref=e130]:
+                - radio "star star" [checked] [ref=e131]:
+                  - img "star" [ref=e133]:
+                    - img [ref=e134]
+                  - img "star" [ref=e137]:
+                    - img [ref=e138]
+              - listitem [ref=e140]:
+                - radio "star star" [checked] [ref=e141]:
+                  - img "star" [ref=e143]:
+                    - img [ref=e144]
+                  - img "star" [ref=e147]:
+                    - img [ref=e148]
+              - listitem [ref=e150]:
+                - radio "star star" [checked] [ref=e151]:
+                  - img "star" [ref=e153]:
+                    - img [ref=e154]
+                  - img "star" [ref=e157]:
+                    - img [ref=e158]
+              - listitem [ref=e160]:
+                - radio "star star" [checked] [ref=e161]:
+                  - img "star" [ref=e163]:
+                    - img [ref=e164]
+                  - img "star" [ref=e167]:
+                    - img [ref=e168]
+              - listitem [ref=e170]:
+                - radio "star star" [checked] [ref=e171]:
+                  - img "star" [ref=e173]:
+                    - img [ref=e174]
+                  - img "star" [ref=e177]:
+                    - img [ref=e178]
+            - generic [ref=e180]:
+              - img "environment" [ref=e181]:
+                - img [ref=e182]
+              - generic [ref=e184]: Київ, вулиця Фізкультури 1, корпус 3
+            - link "Детальніше" [ref=e185]:
+              - /url: /club/26
+              - link "Детальніше" [ref=e186]:
+                - /url: /club/26
+          - generic [ref=e189] [cursor=pointer]:
+            - generic [ref=e190]:
+              - generic [ref=e191]:
+                - img
+              - generic [ref=e192]: Онлайн-школа точних наук YOUSTUD
+            - generic [ref=e196]: Інше
+            - paragraph [ref=e197]: YOUSTUD - це перша в Україні онлайн-школа точних наук. Ми допомагаємо дітям зрозуміти, що точні науки - це не страшно, а навіть дуже цікаво. Таким чином діти набагато краще сприймають інформацію. Підготовка до ЗНО/ДПА, підвищення рівня знань з точних наук
+            - generic [ref=e198]:
+              - img "desktop" [ref=e199]:
+                - img [ref=e200]
+              - text: Гурток онлайн
+            - radiogroup [ref=e202]:
+              - listitem [ref=e203]:
+                - radio "star star" [checked] [ref=e204]:
+                  - img "star" [ref=e206]:
+                    - img [ref=e207]
+                  - img "star" [ref=e210]:
+                    - img [ref=e211]
+              - listitem [ref=e213]:
+                - radio "star star" [checked] [ref=e214]:
+                  - img "star" [ref=e216]:
+                    - img [ref=e217]
+                  - img "star" [ref=e220]:
+                    - img [ref=e221]
+              - listitem [ref=e223]:
+                - radio "star star" [checked] [ref=e224]:
+                  - img "star" [ref=e226]:
+                    - img [ref=e227]
+                  - img "star" [ref=e230]:
+                    - img [ref=e231]
+              - listitem [ref=e233]:
+                - radio "star star" [checked] [ref=e234]:
+                  - img "star" [ref=e236]:
+                    - img [ref=e237]
+                  - img "star" [ref=e240]:
+                    - img [ref=e241]
+              - listitem [ref=e243]:
+                - radio "star star" [checked] [ref=e244]:
+                  - img "star" [ref=e246]:
+                    - img [ref=e247]
+                  - img "star" [ref=e250]:
+                    - img [ref=e251]
+            - img "environment" [ref=e254]:
+              - img [ref=e255]
+            - link "Детальніше" [ref=e257]:
+              - /url: /club/32
+              - link "Детальніше" [ref=e258]:
+                - /url: /club/32
+          - generic [ref=e261] [cursor=pointer]:
+            - generic [ref=e262]:
+              - img [ref=e265]
+              - generic [ref=e266]: Школа перкусії "ЗВУЧИ!"
+            - generic [ref=e270]: Вокальна студія, музика, музичні інструменти
+            - paragraph [ref=e271]: "- заняття з гри на джембе;- дитяча лабораторія звуку;- барабанне коло та майстер-класи."
+            - radiogroup [ref=e272]:
+              - listitem [ref=e273]:
+                - radio "star star" [checked] [ref=e274]:
+                  - img "star" [ref=e276]:
+                    - img [ref=e277]
+                  - img "star" [ref=e280]:
+                    - img [ref=e281]
+              - listitem [ref=e283]:
+                - radio "star star" [checked] [ref=e284]:
+                  - img "star" [ref=e286]:
+                    - img [ref=e287]
+                  - img "star" [ref=e290]:
+                    - img [ref=e291]
+              - listitem [ref=e293]:
+                - radio "star star" [checked] [ref=e294]:
+                  - img "star" [ref=e296]:
+                    - img [ref=e297]
+                  - img "star" [ref=e300]:
+                    - img [ref=e301]
+              - listitem [ref=e303]:
+                - radio "star star" [checked] [ref=e304]:
+                  - img "star" [ref=e306]:
+                    - img [ref=e307]
+                  - img "star" [ref=e310]:
+                    - img [ref=e311]
+              - listitem [ref=e313]:
+                - radio "star star" [checked] [ref=e314]:
+                  - img "star" [ref=e316]:
+                    - img [ref=e317]
+                  - img "star" [ref=e320]:
+                    - img [ref=e321]
+            - generic [ref=e323]:
+              - img "environment" [ref=e324]:
+                - img [ref=e325]
+              - generic [ref=e327]: вулиця Братська, 8
+            - link "Детальніше" [ref=e328]:
+              - /url: /club/352
+              - link "Детальніше" [ref=e329]:
+                - /url: /club/352
+  - contentinfo [ref=e330]:
+    - generic [ref=e331]:
+      - link [ref=e332] [cursor=pointer]:
+        - /url: ""
+      - generic [ref=e335]:
+        - generic [ref=e336]: Нам небайдуже майбутнє
+        - generic [ref=e337]: дітей та української мови
+      - generic [ref=e339]:
+        - link "facebook" [ref=e340] [cursor=pointer]:
+          - /url: https://www.facebook.com/teach.in.ukrainian
+          - img "facebook":
+            - img
+        - link "youtube" [ref=e341] [cursor=pointer]:
+          - /url: https://www.youtube.com/channel/UCP38C0jxC8aNbW34eBoQKJw
+          - img "youtube":
+            - img
+        - link "instagram" [ref=e342] [cursor=pointer]:
+          - /url: https://www.instagram.com/yedyni.ruh/
+          - img "instagram":
+            - img
+        - link:
+          - /url: ""
+      - generic [ref=e343]: ©2021-2022 Design by Qubstudio & Development by SoftServe
+    - generic [ref=e344]:
+      - generic [ref=e345]: Наші партнери
+      - generic [ref=e346]:
+        - link "soft_serve" [ref=e347] [cursor=pointer]:
+          - /url: https://www.softserveinc.com/uk-ua
+          - img "soft_serve" [ref=e348]
+        - link "Mova_obyednue" [ref=e349] [cursor=pointer]:
+          - /url: https://www.facebook.com/zakonpromovu5670
+          - img "Mova_obyednue" [ref=e350]
+        - link "EDERA" [ref=e351] [cursor=pointer]:
+          - /url: https://www.ed-era.com
+          - img "EDERA" [ref=e352]
+        - link "e-mova" [ref=e353] [cursor=pointer]:
+          - /url: https://emova.language-ua.online
+          - img "e-mova" [ref=e354]
+        - link "Kraina_FM" [ref=e355] [cursor=pointer]:
+          - /url: https://krainafm.com.ua
+          - img "Kraina_FM" [ref=e356]
+        - link "ucf" [ref=e357] [cursor=pointer]:
+          - /url: https://ucf.in.ua
+          - img "ucf" [ref=e358]
+        - link "prostir_svobodi" [ref=e359] [cursor=pointer]:
+          - /url: https://prostirsvobody.org
+          - img "prostir_svobodi" [ref=e360]
+    - generic [ref=e361]:
+      - generic [ref=e362]: Як допомогти проєкту?
+      - generic [ref=e363]: Ініціатива потребує постійної фінансової підтримки, аби покривати щоденні витрати на роботу.
+      - link "Допомогти проєкту" [ref=e364] [cursor=pointer]:
+        - /url: https://secure.wayforpay.com/payment/s0f2891d77061
+        - button "Допомогти проєкту" [ref=e365]:
+          - generic [ref=e366]: Допомогти проєкту
+```
+
+# Test source
+
+```ts
+  1  | import type { Page, Locator } from '@playwright/test';
+  2  | 
+  3  | import { NewsCardListComponent } from '@/components/news/news-card-list-component';
+  4  | import { PaginationComponent } from '@/components/common/pagination-component';
+  5  | import { ClubsSidebarComponent } from '@/components/club/clubs-sidebar-component';
+  6  | import { NewsCardComponent } from '@/components/news/news-card-component';
+  7  | import { BasePage } from '@/pages/base-page';
+  8  | import { ListClubCardComponent } from '@/components/club/list-club-card-component';
+  9  | import { ClubCardComponent } from '@/components/club/club-card-component';
+  10 | 
+  11 | export class NewsPage extends BasePage {
+  12 |   private readonly newsList: Locator;
+  13 |   private readonly newsListComponent: NewsCardListComponent;
+  14 |   private readonly clubsSidebar: Locator;
+  15 |   private readonly clubsSidebarComponent: ClubsSidebarComponent;
+  16 |   private readonly CARDS_PER_PAGE = 4;
+  17 |   private readonly listCardLocator: Locator;
+  18 |   private readonly newsCardsContainer: Locator;
+  19 | 
+  20 |   private readonly clubList: ListClubCardComponent;
+  21 | 
+  22 |   constructor(page: Page) {
+  23 |     super(page);
+  24 |     this.listCardLocator = this.page.locator('.club-sider');
+  25 |     this.clubList = new ListClubCardComponent(this.listCardLocator);
+  26 |     this.newsList = page.locator('.global-padding.news-content');
+  27 |     this.newsListComponent = new NewsCardListComponent(this.newsList);
+  28 |     this.clubsSidebar = page.locator('.club-sider');
+  29 |     this.clubsSidebarComponent = new ClubsSidebarComponent(this.clubsSidebar);
+  30 |     this.newsCardsContainer = page.locator('#newsContainer');
+  31 |   }
+  32 | 
+  33 |   async navigate(): Promise<void> {
+> 34 |     await this.page.goto('/news');
+     |                     ^ Error: page.goto: Test timeout of 60000ms exceeded.
+  35 |   }
+  36 | 
+  37 |   getNewsList(): NewsCardListComponent {
+  38 |     return this.newsListComponent;
+  39 |   }
+  40 | 
+  41 |   async getClubList(): Promise<ClubCardComponent[]> {
+  42 |     return await this.clubList.getClubs();
+  43 |   }
+  44 |   async getFirstClubCard(): Promise<ClubCardComponent> {
+  45 |     return await this.clubList.getClubCardByIndex(0);
+  46 |   }
+  47 | 
+  48 |   getClubsSidebar(): ClubsSidebarComponent {
+  49 |     return this.clubsSidebarComponent;
+  50 |   }
+  51 | 
+  52 |   getPagination(): PaginationComponent {
+  53 |     return this.pagination;
+  54 |   }
+  55 | 
+  56 |   async waitForPageLoad(): Promise<void> {
+  57 |     await this.page.waitForLoadState('networkidle');
+  58 |     await this.newsList.waitFor({ state: 'visible' });
+  59 |   }
+  60 | 
+  61 |   async getNewsTitles(): Promise<string[]> {
+  62 |     // const titles = await this.newsListComponent.getAllCards().then(cards => Promise.all(cards.map(card => card.getTitle())));
+  63 |     const cards = await this.newsListComponent.getAllCards();
+  64 |     const titles: string[] = [];
+  65 |     for (const card of cards) {
+  66 |       titles.push(await card.getTitle());
+  67 |     }
+  68 | 
+  69 |     return titles;
+  70 |   }
+  71 | 
+  72 |   getNewsCardsContainerLocator(): Locator {
+  73 |     return this.newsCardsContainer;
+  74 |   }
+  75 | 
+  76 |   async getCardByGeneralIndex(generalIndex: number): Promise<NewsCardComponent> {
+  77 |     const targetPage = Math.ceil(generalIndex / this.CARDS_PER_PAGE);
+  78 |     const localIndex = (generalIndex - 1) % this.CARDS_PER_PAGE;
+  79 | 
+  80 |     const currentPage = await this.pagination.getActivePageNumber();
+  81 | 
+  82 |     if (currentPage !== targetPage) {
+  83 |       await this.pagination.goToPage(targetPage);
+  84 |       await this.waitForPageLoad();
+  85 |     }
+  86 | 
+  87 |     return this.newsListComponent.getNewsByIndex(localIndex);
+  88 |   }
+  89 | }
+  90 | 
+```
