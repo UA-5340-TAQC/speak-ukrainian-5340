@@ -1,0 +1,33 @@
+{
+  "fieldsList": [
+    "name",
+    "date"
+  ],
+  "fieldPropertiesList": [
+    "string",
+    "date"
+  ],
+  "templateName": "StandardTemplate",
+  "values": "value1, value2",
+  "columnHeadersList": [
+    "Student Name",
+    "Completion Date"
+  ],
+  "excelContent": [
+    [
+      "John Doe",
+      "2026-06-28"
+    ]
+  ],
+  "excelColumnsOrder": [
+    "0",
+    "1"
+  ],
+  "googleFormResults": [
+    {
+      "userEmail": "student@example.com",
+      "fullName": "John Doe",
+      "totalScore": 100
+    }
+  ]
+}
