@@ -1,0 +1,122 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: api/news-api.spec.ts >> News API >> should update news and validate response
+- Location: tests/api/news-api.spec.ts:62:3
+
+# Error details
+
+```
+Error: expect(received).toBeTruthy()
+
+Received: false
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@/fixtures';
+  2  | import * as allure from 'allure-js-commons';
+  3  | import type { APIResponse } from '@playwright/test';
+  4  | import type { NewsRequestDto } from '@/api/dto/news/news-request.dto';
+  5  | import type { NewsResponseDto } from '@/api/dto/news/news-response.dto';
+  6  | import type { NewsProfileDto } from '@/api/dto/news/news-profile.dto';
+  7  | import { DataBuilderApi } from '@/data';
+  8  | 
+  9  | test.describe('News API', (): void => {
+  10 |   const payload: NewsRequestDto = DataBuilderApi.validNewsPayload();
+  11 | 
+  12 |   test.beforeEach(async (): Promise<void> => {
+  13 |     await allure.epic('API Infrastructure');
+  14 |     await allure.feature('News');
+  15 |   });
+  16 | 
+  17 |   test('should return a list of news', async ({ newsClient }): Promise<void> => {
+  18 |     await allure.story('Get List of All News');
+  19 |     await allure.severity('critical');
+  20 |     await allure.description(
+  21 |       'Verify that the full list of news is retrieved successfully and check the basic structure.'
+  22 |     );
+  23 | 
+  24 |     const response: APIResponse = await newsClient.getAllNews();
+  25 | 
+  26 |     expect(response.ok()).toBeTruthy();
+  27 |     expect(response.status()).toBe(200);
+  28 | 
+  29 |     const news: NewsResponseDto[] = await response.json();
+  30 | 
+  31 |     await allure.step('Validate response structure and news count', async (): Promise<void> => {
+  32 |       expect(Array.isArray(news)).toBe(true);
+  33 |       expect(news.length).toBeGreaterThan(0);
+  34 |       expect(news[0].title).toBeDefined();
+  35 |     });
+  36 |   });
+  37 | 
+  38 |   test('should create news and validate response', async ({ newsClient }): Promise<void> => {
+  39 |     await allure.story('Create News');
+  40 |     await allure.severity('critical');
+  41 |     await allure.description(
+  42 |       'Verify that a new news item is created successfully and check the response data.'
+  43 |     );
+  44 | 
+  45 |     const response: APIResponse = await newsClient.createNews(payload);
+  46 | 
+  47 |     await allure.step('Validate response status is 200 OK', async () => {
+  48 |       expect(response.ok()).toBeTruthy();
+  49 |       expect(response.status()).toBe(200);
+  50 |     });
+  51 | 
+  52 |     const body: NewsProfileDto = await response.json();
+  53 | 
+  54 |     await allure.step('Validate created news matches payload', async () => {
+  55 |       expect(body.title).toBe(payload.title);
+  56 |       expect(body.description).toBe(payload.description);
+  57 |       expect(body.date).toBe(payload.date);
+  58 |       expect(body.id).toBeDefined();
+  59 |     });
+  60 |   });
+  61 | 
+  62 |   test('should update news and validate response', async ({ newsClient }): Promise<void> => {
+  63 |     await allure.story('Update News');
+  64 |     await allure.severity('critical');
+  65 |     await allure.description(
+  66 |       'Verify that an existing news item is updated successfully with new data.'
+  67 |     );
+  68 | 
+  69 |     const response: APIResponse = await newsClient.updateNews(27, payload);
+  70 | 
+  71 |     await allure.step('Validate response status is 200 OK', async () => {
+> 72 |       expect(response.ok()).toBeTruthy();
+     |                             ^ Error: expect(received).toBeTruthy()
+  73 |       expect(response.status()).toBe(200);
+  74 |     });
+  75 | 
+  76 |     const body: NewsProfileDto = await response.json();
+  77 | 
+  78 |     await allure.step('Validate updated news matches new payload', async () => {
+  79 |       expect(body.title).toBe(payload.title);
+  80 |       expect(body.description).toBe(payload.description);
+  81 |       expect(body.id).toBe(27);
+  82 |     });
+  83 |   });
+  84 | 
+  85 |   test('should delete news successfully', async ({ newsClient }): Promise<void> => {
+  86 |     await allure.story('Delete News');
+  87 |     await allure.severity('critical');
+  88 |     await allure.description('Verify that a news item can be deleted successfully.');
+  89 | 
+  90 |     const response: APIResponse = await newsClient.deleteNews(27);
+  91 | 
+  92 |     await allure.step('Validate response status is 200 OK', async () => {
+  93 |       expect(response.ok()).toBeTruthy();
+  94 |       expect(response.status()).toBe(200);
+  95 |     });
+  96 |   });
+  97 | });
+  98 | 
+```
